@@ -1,9 +1,14 @@
 
 function calculateRate(type, weight, callback) {
 
-	console.log("I got to gerPrice with type= " + type + " weight = " + weight);
-	
 	var price = 0.0;
+
+	if (weight < 0 || weight == "") {
+
+		var results = { type: "", weight: "Please enter a weight", price: "" };
+
+		callback(null, results);
+	}
 
 	switch (type) {
 		
@@ -47,14 +52,12 @@ function calculateRate(type, weight, callback) {
 
 	} else if (price == -1) {
 
-		console.log("too big of number");
 		var results = { type: type, weight: "", price: "" };
 
 		callback(null, results);
 	
 	} else if (price == -2) {
 
-		console.log("too big of number");
 		var results = { type: type, weight: "Please enter a weight less than or equal to " + weight, price: "" };
 
 		callback(null, results);

@@ -12,13 +12,12 @@ app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
 
-	response.sendfile("./public/home.html");
+	response.sendFile("./public/home.html");
 	
 });
 
 app.get('/results', function(request, response) {
 
-	console.log("I got to the home request");
 	handelPostage(request, response);
 	
 });
@@ -27,8 +26,6 @@ function handelPostage(request, response) {
 
 	var type = request.query.type;
 	var weight = request.query.weight;
-
-	console.log("type= " + type + " weight = " + weight);
 
 	postalRate.calculateRate(type, weight, function(error, results) {
   		

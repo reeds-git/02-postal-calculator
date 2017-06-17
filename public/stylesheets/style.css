@@ -1,4 +1,9 @@
-.center (
-	
+.center {
 	text-align: center;
-)
+}
+.left {
+	text-align: left;	
+}
+body {
+	background-image: url("../images/mail.jpg");
+}
