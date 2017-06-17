@@ -24,17 +24,12 @@ function handelPostage(request, response) {
 
 	console.log("type= " + type + " weight = " + weight);
 
-	postalRate.getPrice(type, weight, function(error, results) {
+	postalRate.calculateRate(type, weight, function(error, results) {
   		
   		response.render('results', results);
 
 	});
 }
-
-// app.get('/home', function(request, response) {
-// 	console.log("I am in get rate");
-//   response.render('results');
-// });
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));

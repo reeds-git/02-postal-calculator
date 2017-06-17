@@ -1,25 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Postal Rate Calculator</title>
+	<% include ../partials/head.ejs %>
 </head>
 <body>
-	<div class="container">
-		<h2>Postal Rate Calculator</h2>
+	<div class="container center">
+		<h1>Postal Rate Calculator</h1>
 		
-
-		<h2>Your Rate is: </h2>
-
-		
-<!--
-			<input id="weight" type="text" name="weight">
-
-				<select id="type" name="type">
-					<option value="ls">Letter (Stamped)</option>
-					<option value="lm">Letter (Metered)</option>
-					<option value="le">Large Envelopes (Flats)</option>
-					<option value="par">Parcels</option>
- -->
+		<h4><%= type %> <%= weight %> <%= price %></h4>
 
 	</div>
 </body>
