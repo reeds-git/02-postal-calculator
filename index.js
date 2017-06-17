@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
 
-	response.sendFile("./public/home.html");
+	response.sendFile(__dirname + '/public/home.html');
 	
 });
 
