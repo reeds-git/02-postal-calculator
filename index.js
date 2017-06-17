@@ -16,7 +16,7 @@ app.get('/', function(request, response) {
 	
 });
 
-app.get('/home', function(request, response) {
+app.get('/results', function(request, response) {
 
 	console.log("I got to the home request");
 	handelPostage(request, response);
