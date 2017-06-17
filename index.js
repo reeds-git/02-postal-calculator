@@ -10,6 +10,12 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views/pages');
 app.set('view engine', 'ejs');
 
+app.get('/', function(request, response) {
+
+	response.sendfile("./public/home.html");
+	
+});
+
 app.get('/home', function(request, response) {
 
 	console.log("I got to the home request");
