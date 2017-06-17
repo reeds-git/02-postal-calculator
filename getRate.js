@@ -42,26 +42,24 @@ function calculateRate(type, weight, callback) {
 			break;
 	}
 
-	console.log("price = " + price);
-
 	if (price >=  0) {
 
 		var results = { type: type, weight: weight  + " oz: ", price: "$" + price };
 
-		callback(null, results);
-
 	} else if (price == -1) {
 
 		var results = { type: type, weight: "", price: "" };
-
-		callback(null, results);
 	
 	} else if (price == -2) {
 
-		var results = { type: type, weight: "Please enter a weight less than or equal to " + weight, price: "" };
+		var results = { type: "for "+ type, weight: " Please enter a weight less than or equal to " + 3.5, price: "" };
+	
+	} else if (price == -3) {
 
-		callback(null, results);
+		var results = { type: "for "+ type, weight: " Please enter a weight less than or equal to " + 13, price: "" };
 	}
+
+	callback(null, results);
 }
 
 function getLetterStamped(weight) {
@@ -84,9 +82,7 @@ function getLetterStamped(weight) {
 		
 	} else {
 		
-		weight = 3.5;
-		return -2;
-		
+		return -2;		
 	}
 
 	return price;
@@ -112,9 +108,7 @@ function getLetterMetered(weight) {
 		
 	} else {
 		
-		weight = 3.5;
 		return -2;
-		
 	}
 
 	return price;
@@ -176,8 +170,7 @@ function getLargeEnvelope(weight) {
 		
 	} else {
 				
-		weight = 13;	
-		return -2;	
+		return -3;	
 	}
 
 	return price;
@@ -227,8 +220,7 @@ function getParcel(weight) {
 		
 	} else {
 		
-		weight = 13;
-		return -2;	
+		return -3;	
 	}
 
 	return price;
